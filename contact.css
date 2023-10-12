@@ -5,14 +5,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #063d612f;
-    padding: 5rem;
+    background-color: rgba(60, 165, 179, 0.856);
+    padding: 3rem;
     
 }
 #contact .row{
     display: flex;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.411);
+}
+
+#contact .row .col{
+    margin: 5px;
 }
 .card {
     width: 15rem;
@@ -22,8 +26,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
-    /* flex-direction: column; */
 }
 
 .card .loc{
