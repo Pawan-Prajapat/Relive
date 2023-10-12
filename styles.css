@@ -46,7 +46,7 @@ footer .container #conctIcon .conctIcon a{
 /* for title product */
 #products{
     padding: 5vh 8vw 7vh 8vw;
-    background: #063d612f;
+    background: rgba(60, 165, 179, 0.856);
     width: 100vw;
 }
 
@@ -88,7 +88,10 @@ nav .container .navLogo{
 /* about page css  */
 
 #about{
-    background-color: #063d612f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(60, 165, 179, 0.856);
     width: 100vw;
 }
 #about .row{
