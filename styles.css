@@ -94,10 +94,24 @@ nav .container .navLogo{
     background-color: rgba(60, 165, 179, 0.856);
     width: 100vw;
 }
-#about .row{
+
+#about .row {
     background-color: rgba(255, 255, 255, 0.411);
     border-radius: 4px;
+    display: flex;
 }
+
+@media screen and (max-width: 1037px) and (max-height: 607px) {
+    #about .row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+
+    }
+}
+
 #about .titleDesi{
     display: flex;
     flex-direction: column;
