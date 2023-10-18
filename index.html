@@ -13,7 +13,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
         <div class="container">
             <div class="navLogo">
                 <a class="navbar-brand" href="index.html"><img src="./img/Relive Othro.png" alt=""></a>
@@ -40,9 +40,26 @@
             </div>
         </div>
     </nav>
+    <!-- dynamic banner -->
+    <div id="banner">
+        <div class="slideshow-container"> 
+            <div class="mySlides">
+            <img src="./img/Relive banner.jpg" alt="Image 1">
+            </div>
+            <div class="mySlides">
+            <img src="./img/Relive banner2.jpg" alt="Image 2">
+            </div>
+            <div class="mySlides">
+            <img src="./img/Relive banner3.jpg" alt="Image 3">
+            </div>
+            <div class="mySlides">
+            <img src="./img/Relive banner4.jpg" alt="Image 3">
+            </div>
+        </div>
+    </div>
 
-    <div class="banner">
-        <img src="" alt="">
+    <div  class="row" id="OurCategories">
+        <img src="./img/Our Categories.jpg" alt="" >
     </div>
     <!-- Page content goes here -->
     <!-- Example: Home Page -->
@@ -63,9 +80,9 @@
                 <!-- Card 1 -->
                 <div class="col-md-3 p-3 productcard">
                     <div class="card border-0">
-                        <div class=" product_inner_imgbox  px-2" style="height: 50vh;">
-                            <img src="./img/pillow.jpg" class="card-img-top  px-0" alt="Product 1"
-                                style="height: 48vh;">
+                        <div class=" product_inner_imgbox  px-2" style="height: 40vh;">
+                            <img src="./img/products/BodyBelts Braces/Rib Belt.jpg" class="card-img-top  px-0" alt="Product 1"
+                                style="height: 40vh;">
                         </div>
                         <div class="cart-btn">
                             <button class="btn btn-white shadow-sm rounded-pill"><span>Add to </span><i
@@ -84,9 +101,9 @@
                 <!-- Card 2 -->
                 <div class="col-md-3   p-3 productcard">
                     <div class="card border-0">
-                        <div class=" product_inner_imgbox  px-2" style="height: 50vh;">
-                            <img src="./img/loopneo.jpg" class="card-img-top  px-0" alt="Product 1"
-                                style="height: 48vh;">
+                        <div class=" product_inner_imgbox  px-2" style="height: 40vh;">
+                            <img src="./img/products/Knee & Ankle Support/Knee Cap With Open Patella.jpg" class="card-img-top  px-0" alt="Product 1"
+                                style="height: 40vh;">
                         </div>
                         <div class="cart-btn">
                             <button class="btn btn-white shadow-sm rounded-pill"><span>Add to </span><i
@@ -105,8 +122,8 @@
                 <!-- Card 3 -->
                 <div class="col-md-3   p-3 productcard">
                     <div class="card border-0">
-                        <div class=" product_inner_imgbox  px-2" style="height: 50vh;">
-                            <img src="./img/stick.jpg" class="card-img-top  px-0" alt="Product 1" style="height: 48vh;">
+                        <div class=" product_inner_imgbox  px-2" style="height: 40vh;">
+                            <img src="./img/products/Foot Care Products/Silicone Heel Cushion (Pair).jpg" class="card-img-top  px-0" alt="Product 1" style="height: 40vh;">
                         </div>
                         <div class="cart-btn">
                             <button class="btn btn-white shadow-sm rounded-pill"><span>Add to </span><i
@@ -124,9 +141,9 @@
                 <!-- Card 4 -->
                 <div class="col-md-3   p-3 productcard">
                     <div class="card border-0">
-                        <div class=" product_inner_imgbox  px-2" style="height: 50vh;">
-                            <img src="./img/gla_pata.jpeg" class="card-img-top  px-0" alt="Product 1"
-                                style="height: 48vh;">
+                        <div class=" product_inner_imgbox  px-2" style="height: 40vh;">
+                            <img src="./img/products/Cervical Acids/Soft Cervical Collar With Support.jpg" class="card-img-top  px-0" alt="Product 1"
+                                style="height: 40vh;">
                         </div>
                         <div class="cart-btn">
                             <button class="btn btn-white shadow-sm rounded-pill"><span>Add to </span><i
@@ -204,6 +221,11 @@
             </div>
         </div>
     </div>
+
+    <div class="row" id="contries">
+        <img src="./img/Countries.jpg" alt="">
+    </div>
+
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 px-0">
         <div id="foot-first-part">
@@ -264,6 +286,7 @@
 
     <!-- Bootstrap JS and jQuery scripts -->
     <script src="./bootstrap-5/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
