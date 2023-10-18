@@ -10,14 +10,14 @@ function createProductCard(imageSrc, title, description, price) {
     // Create the product inner image box
     const productInnerImgBox = document.createElement('div');
     productInnerImgBox.className = 'product_inner_imgbox px-2';
-    productInnerImgBox.style.height = '50vh';
+    productInnerImgBox.style.height = '40vh';
 
     // Create the 'img' element for the product image
     const productImage = document.createElement('img');
     productImage.src = imageSrc;
     productImage.className = 'card-img-top px-0';
     productImage.alt = 'Product 1';
-    productImage.style.height = '48vh';
+    productImage.style.height = '40vh';
 
     // Append the image to the product inner image box
     productInnerImgBox.appendChild(productImage);
@@ -81,31 +81,96 @@ function createProductCard(imageSrc, title, description, price) {
 // Example usage of the function
 
 // Define a 2D array where each 1D array contains four values
-const productData = [
-    ['./img/thumb.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '100'],
-    ['./img/strap.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '200'],
-    ['./img/goda.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/gla_pata.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/hand.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/loopneo.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/neoprene.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/pavnila pta.avif', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/pillow.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/splint.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/stick.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/theeth.jpeg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/bandage.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-    ['./img/chek.webp', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
-];
+const productDataDict = {
+    BodyBeltBraces:[['./img/products/BodyBelts Braces/Abdominal Support.jpg', 'Abdominal support 9"', 'A-01 S,M,L,XL,XXL', '100'],
+    ['./img/products/BodyBelts Braces/Contoured L.S. Support.jpg', 'Abdominal Belt', 'A-01 S,M,L,XL,XXL', '100'],
+    ['./img/products/BodyBelts Braces/Dorsolumbar Taylors Brace.jpg', 'LS Belt Lumbopore', 'A-01 S,M,L,XL,XXL', '100'],
+    ['./img/products/BodyBelts Braces/Lumbo Sacral Support.jpg', 'Lumbo Sacral Belt', 'A-01 S,M,L,XL,XXL', '100'],
+    ['./img/products/BodyBelts Braces/Rib Belt.jpg', 'Contoured L.S. Support', 'A-01 S,M,L,XL,XXL', '100'],
+    ['./img/products/BodyBelts Braces/Sternal Support.jpg', 'Rib Belt', 'A-01 S,M,L,XL,XXL', '100']],
+
+    CervicalAcids:[['./img/products/Cervical Acids/Cervical Colllar Hard.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Cervical Acids/Contoured Cervical Pillow.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Cervical Acids/Philadelphia Collar.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Cervical Acids/Soft Cervical Collar With Support.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Cervical Acids/Soft Cervical Collar.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']],
+
+    EconomyRange:[['./img/products/Economy Range of Product/Contoured L.S. Support.jpg', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Economy Range of Product/Lumbo Sacral Support.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Economy Range of Product/Rib Belt.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']],
+
+    Fingers:[['./img/products/Fingers wrist arms support/Execrise Gel Ball Soft.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Finger Cot splint.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Frog Splint.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Mallet Splint.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']],
+
+    wristArms:[['./img/products/Fingers wrist arms support/Elastic Wrist Splint (Left Right).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Elbow Support.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Tennis Elbow Support.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Thumb Spica Splint.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Wrist and Forearm Splint.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Wrist Support With Thumb.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fingers wrist arms support/Wrist Support.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']],
+
+    FootCare:[['./img/products/Foot Care Products/Medial Arch Support (Pair).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Foot Care Products/Silicone Heel Cushion (Pair).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Foot Care Products/Silicone Insole (Pair).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Foot Care Products/Toe Spreader with Loop.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']],
+
+    FractureAcids:[['./img/products/Fracture Acids/Arm Pouch Sling (Baggy).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fracture Acids/Arm Pouch Sling (Tropical).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fracture Acids/Cast Shoe.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fracture Acids/Clavicle Brace.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fracture Acids/Elastic Shoulder Immobilizer with Cup.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Fracture Acids/Universal Shoulder Immobilizer.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']],
+
+    kneeAnkle:[['./img/products/Knee & Ankle Support/Elastic Knee Support.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Knee & Ankle Support/Knee Cap (Pair).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Knee & Ankle Support/Knee Cap Hinged.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Knee & Ankle Support/Knee Cap With Open Patella.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Knee & Ankle Support/Knee Immobilizer Long.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Knee & Ankle Support/Knee Immobilizer Short.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']],
+
+    other:[['./img/products/Other Product/Coccyx Cushion (Foam).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Other Product/Hot & Cold Gel Pack.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Other Product/Leg Traction Brace.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Other Product/Ortho Stockinette.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Other Product/Osteo Roll.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Other Product/Skin Traction Set (Puff Liner).jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Other Product/Tourniquet.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300'],
+    ['./img/products/Other Product/Weigth Cuff.jpg', 'Abdominal support', '9"/23cm, grey, 1 unit', '300']]
+
+};
 
 // Find the productContainer by its id
-const productContainer = document.getElementById('productContainer');
+let productContainer = document.getElementById('productContainer');
 
-// Loop through the 2D array and create product cards for each set of values
-for (const data of productData) {
-    const newProductCard = createProductCard(...data); // Use the spread operator to pass the values
+// for empty previous div when click other button
 
-    // Append the newly created product card to the productContainer
+function removeData() {
+    // Get a reference to the child element you want to remove
+    let parentDiv = document.getElementById('productContainer');
+
+    // Remove all child elements from the parent
+    while (parentDiv.firstChild) {
+        parentDiv.removeChild(parentDiv.firstChild);
+    }
+}
+
+
+
+function specificpro(whichproshow){
+    removeData();
+    for(let data of productDataDict[whichproshow]){
+        let newProductCard = createProductCard(...data);
+        productContainer.appendChild(newProductCard);
+    }
+}
+
+for(let data of productDataDict.BodyBeltBraces){
+    console.log('pawan');
+    let newProductCard = createProductCard(...data);
     productContainer.appendChild(newProductCard);
 }
+
 
