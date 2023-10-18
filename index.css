@@ -11,9 +11,9 @@
 
 .review-card {
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
-    width: 300px;
+    width: 280px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -47,3 +47,41 @@
 .reviewer-name {
     font-weight: bold;
 }
+
+#banner{
+    display: flex;
+    height: 90vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mySlides img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* our catagories */
+
+  
+
+  #OurCategories {
+    width: 100%;
+    height: 70%;
+  }
+  #contries {
+    width: 100%;
+    height: 10%;
+  }
